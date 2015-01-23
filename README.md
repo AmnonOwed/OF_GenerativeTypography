@@ -5,6 +5,11 @@ This is an OpenFrameworks port of the CAN_GenerativeTypography examples, origina
 I am doing this port purely for learning purposes, so it may contain incorrect, inefficient or incomplete code.
 It's a work-in-progress, which may or may not be fully completed. You can follow / see the progress in the list below.
 
+Steps to run the examples:
+
+1. Download or clone the complete repository into the **of_release\apps\** folder
+2. Use OF's projectGenerator (on each example) to create a runnable project for the provided src files
+
 The original blog post can be found [here](http://www.creativeapplications.net/processing/generative-typography-processing-tutorial).
 
 The original Processing code repository can be found [here ](https://github.com/AmnonOwed/CAN_GenerativeTypography).
