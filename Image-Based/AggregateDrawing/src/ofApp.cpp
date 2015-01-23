@@ -44,7 +44,7 @@ void ofApp::draw(){
 		// pick a random coordinate
 		float x = ofRandom(ofGetWidth());
 		float y = ofRandom(ofGetHeight());
-		// check if the coordinate is inside the text (in the offscreen PGraphics)
+		// check if the coordinate is inside the text (in the offscreen fbo's pixels)
 		bool insideText = (pix.getColor(x, y) == FBO_COLOR);
 		// if it is indeed, then draw a shape in the main screen
 		if(insideText){

@@ -17,5 +17,5 @@ class ofApp : public ofBaseApp {
 		ofColor BACKGROUND_COLOR;
 		ofColor FBO_COLOR;
 
-        ofPixels pix;
+		ofPixels pix;
 };
