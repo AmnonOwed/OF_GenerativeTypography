@@ -3,8 +3,8 @@
 # general
 #########################
 
-[Bb]in/*  
-![Bb]in/data/  
+[Bb]in/*
+![Bb]in/data/
 [Bb]uild/
 [Oo]bj/
 *.o
