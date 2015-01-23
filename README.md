@@ -29,7 +29,7 @@ Recommended order:
   - [ ] GradientCutout
   - [ ] Waves
   - [x] AggregateDrawing
-  - [ ] AggregateParticles
+  - [x] AggregateParticles
   - [ ] FlowField
   - [ ] FlowFieldVariant
   - [ ] ReactionDiffusion
