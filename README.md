@@ -23,7 +23,7 @@ Recommended order:
   - [ ] InsideOutsideText
   - [ ] GradientCutout
   - [ ] Waves
-  - [*] AggregateDrawing
+  - [x] AggregateDrawing
   - [ ] AggregateParticles
   - [ ] FlowField
   - [ ] FlowFieldVariant
