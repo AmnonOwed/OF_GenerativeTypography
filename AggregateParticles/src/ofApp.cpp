@@ -27,20 +27,15 @@ void ofApp::setup(){
 	ofSetBackgroundAuto(false);
 
 	ofEnableAntiAliasing();
-}
-
-//--------------------------------------------------------------
-bool checkDead(Particle & p){
-	return p.life < 0;
+	ofSetFrameRate(60); // cap frameRate otherwise it goes too fast
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-	ofRemove(particles, checkDead);
 	for(int i = 0; i < particles.size(); i++){
 		particles[i].update(drawMode);
 	}
-	if(particles.size() < maxParticles){
+	while(particles.size() < maxParticles){
 		particles.push_back(Particle(pix, FBO_COLOR));
 	}
 }

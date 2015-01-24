@@ -47,6 +47,10 @@ void Particle::update(const int & drawMode){
 		 life -= lifeRate;
 		 break;
 	}
+	if(life < 0){
+		life = 1;
+		getPosition();
+	}
 }
 
 //--------------------------------------------------------------
@@ -66,7 +70,7 @@ void Particle::display(const int & drawMode){
 	ofSetColor(255);
 	ofEllipse(loc.x, loc.y, r, r); // draw ellipse
 	ofNoFill();
-	ofSetColor(0, 125);
+	ofSetColor(0, 135);
 	ofEllipse(loc.x, loc.y, r, r); // draw ellipse
 }
 
