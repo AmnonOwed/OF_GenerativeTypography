@@ -1,8 +1,9 @@
 #include "Particle.h"
 
-Particle::Particle(ofPixels & _pix, ofColor & _c){
+Particle::Particle(ofPixels & _pix, ofColor & _c, int & _drawMode){
 	pix = _pix;
 	c = _c;
+	drawMode = _drawMode;
 
 	radius = 10; // base radius of the ellipse
 	life = 1; // start with a full life
@@ -15,15 +16,7 @@ Particle::Particle(ofPixels & _pix, ofColor & _c){
 }
 
 //--------------------------------------------------------------
-void Particle::getPosition(){
-	// get a random position inside the text
-	while(!isInText()){
-		loc.set(ofRandom(ofGetWidth()), ofRandom(ofGetHeight()));
-	}
-}
-
-//--------------------------------------------------------------
-void Particle::update(const int & drawMode){
+void Particle::update(){
 	vel.rotate(ofRandom(-45, 45)); // rotate velocity (direction of movement)
 	loc += vel; // add velocity to position (aka move!)
 	switch(drawMode){
@@ -54,7 +47,7 @@ void Particle::update(const int & drawMode){
 }
 
 //--------------------------------------------------------------
-void Particle::display(const int & drawMode){
+void Particle::display(){
 	float r = radius; // radius of the ellipse
 	switch(drawMode){
 	 case 0:
@@ -72,6 +65,14 @@ void Particle::display(const int & drawMode){
 	ofNoFill();
 	ofSetColor(0, 135);
 	ofEllipse(loc.x, loc.y, r, r); // draw ellipse
+}
+
+//--------------------------------------------------------------
+void Particle::getPosition(){
+	// get a random position inside the text
+	while(!isInText()){
+		loc.set(ofRandom(ofGetWidth()), ofRandom(ofGetHeight()));
+	}
 }
 
 //--------------------------------------------------------------

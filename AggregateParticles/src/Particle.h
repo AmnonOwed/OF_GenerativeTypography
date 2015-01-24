@@ -5,15 +5,16 @@
 
 class Particle {
 	public:
-		Particle(ofPixels & _pix, ofColor & _c);
+		Particle(ofPixels & _pix, ofColor & _c, int & _drawMode);
 
+		void update();
+		void display();
 		void getPosition();
-		void update(const int & drawMode);
-		void display(const int & drawMode);
 		bool isInText();
 
 		ofPixels pix;
 		ofColor c;
+		int drawMode;
 
 		ofVec2f loc;
 		ofVec2f vel;

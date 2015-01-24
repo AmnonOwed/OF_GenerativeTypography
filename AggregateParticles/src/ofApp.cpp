@@ -33,10 +33,10 @@ void ofApp::setup(){
 //--------------------------------------------------------------
 void ofApp::update(){
 	for(int i = 0; i < particles.size(); i++){
-		particles[i].update(drawMode);
+		particles[i].update();
 	}
 	while(particles.size() < maxParticles){
-		particles.push_back(Particle(pix, FBO_COLOR));
+		particles.push_back(Particle(pix, FBO_COLOR, drawMode));
 	}
 }
 
@@ -44,7 +44,7 @@ void ofApp::update(){
 void ofApp::draw(){
 	// display each particle in the list
 	for(int i = 0; i < particles.size(); i++){
-		particles[i].display(drawMode);
+		particles[i].display();
 	}
 }
 
