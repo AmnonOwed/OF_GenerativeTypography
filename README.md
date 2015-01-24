@@ -30,7 +30,7 @@ Recommended order:
   - [ ] Waves
   - [x] AggregateDrawing
   - [x] AggregateParticles
-  - [ ] FlowField
+  - [x] FlowField
   - [ ] FlowFieldVariant
   - [ ] ReactionDiffusion
 
