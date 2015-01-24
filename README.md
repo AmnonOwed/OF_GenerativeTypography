@@ -25,7 +25,7 @@ Recommended order:
   - [ ] UsingPGraphics
 
 2. Image-Based
-  - [ ] InsideOutsideText
+  - [x] InsideOutsideText
   - [ ] GradientCutout
   - [ ] Waves
   - [x] AggregateDrawing
