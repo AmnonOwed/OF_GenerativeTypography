@@ -5,8 +5,8 @@ void ofApp::setup(){
 	drawSpeed = 200; // number of drawn shapes per draw() call
 	drawMode = 0; // move through the drawing modes by clicking the mouse
 
-	BACKGROUND_COLOR = ofColor(255);
-	FBO_COLOR = ofColor(0);
+	bg_color = ofColor(255);
+	fbo_color = ofColor(0);
 
 	ofFbo fbo;
 	fbo.allocate(ofGetWidth(), ofGetHeight(), GL_RGBA);
@@ -18,13 +18,13 @@ void ofApp::setup(){
 	// https://github.com/armadillu/ofxCenteredTrueTypeFont/blob/master/src/ofxCenteredTrueTypeFont.h
 	ofRectangle r = ttf.getStringBoundingBox(s, 0, 0);
 	ofVec2f offset = ofVec2f(floor(-r.x - r.width * 0.5f), floor(-r.y - r.height * 0.5f));
-	ofSetColor(FBO_COLOR);
+	ofSetColor(fbo_color);
 	ttf.drawString(s, fbo.getWidth() / 2 + offset.x, fbo.getHeight() / 2 + offset.y);
 	fbo.end();
 
 	fbo.readToPixels(pix); // the ofPixels class has a convenient getColor() method
 
-	ofBackground(BACKGROUND_COLOR);
+	ofBackground(bg_color);
 	ofSetBackgroundAuto(false);
 
 	ofSetRectMode(OF_RECTMODE_CENTER);
@@ -46,7 +46,7 @@ void ofApp::draw(){
 		float x = ofRandom(ofGetWidth());
 		float y = ofRandom(ofGetHeight());
 		// check if the coordinate is inside the text (in the offscreen fbo's pixels)
-		bool insideText = (pix.getColor(x, y) == FBO_COLOR);
+		bool insideText = (pix.getColor(x, y) == fbo_color);
 		// if it is indeed, then draw a shape in the main screen
 		if(insideText){
 			// switch based on the current draw mode (move through them by clicking the mouse)
@@ -104,6 +104,6 @@ void ofApp::draw(){
 
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button){
-	ofBackground(BACKGROUND_COLOR); // clear the screen when changing drawing mode
+	ofBackground(bg_color); // clear the screen when changing drawing mode
 	drawMode = ++drawMode % 3; // move through 3 drawing modes (0, 1, 2)
 }

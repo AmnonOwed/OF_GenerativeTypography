@@ -14,8 +14,8 @@ class ofApp : public ofBaseApp {
 		int drawSpeed;
 		int drawMode;
 
-		ofColor BACKGROUND_COLOR;
-		ofColor FBO_COLOR;
+		ofColor bg_color;
+		ofColor fbo_color;
 
 		ofPixels pix;
 };
