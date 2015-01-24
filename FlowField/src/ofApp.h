@@ -11,16 +11,19 @@ class ofApp : public ofBaseApp {
 		void update();
 		void draw();
 
+		void resetParticles();
+
 		void mousePressed(int x, int y, int button);
 
 		int maxParticles;
 		int drawMode;
 
-		ofColor BACKGROUND_COLOR;
-		ofColor FBO_COLOR;
+		ofColor bg_color;
+		ofColor fbo_color;
 
 		ofFbo fbo;
 		ofPixels pix;
 
 		vector <Particle> particles;
+		bool bReset;
 };
