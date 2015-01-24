@@ -2,7 +2,7 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-	drawSpeed = 3; // number of drawn shapes per draw() call
+	drawSpeed = 200; // number of drawn shapes per draw() call
 	drawMode = 0; // move through the drawing modes by clicking the mouse
 
 	BACKGROUND_COLOR = ofColor(255);
@@ -30,6 +30,7 @@ void ofApp::setup(){
 	ofSetRectMode(OF_RECTMODE_CENTER);
 
 	ofEnableAntiAliasing();
+	ofSetFrameRate(60); // cap frameRate otherwise it goes too fast
 }
 
 //--------------------------------------------------------------
