@@ -19,8 +19,8 @@ class ofApp : public ofBaseApp {
 		ofColor BACKGROUND_COLOR;
 		ofColor FBO_COLOR;
 
-        ofFbo fbo;
+		ofFbo fbo;
 		ofPixels pix;
 
-		vector<Particle> particles;
+		vector <Particle> particles;
 };
