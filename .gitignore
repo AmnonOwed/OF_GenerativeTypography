@@ -3,6 +3,7 @@
 # general
 #########################
 
+[Bb]in/
 [Bb]in/*
 ![Bb]in/data/
 [Bb]uild/
@@ -36,6 +37,10 @@ xcuserdata
 # Code::Blocks
 *.depend
 *.layout
+*.make
+*.rc
+*.cbp
+*.workspace
 
 # Visual Studio
 *.sdf
