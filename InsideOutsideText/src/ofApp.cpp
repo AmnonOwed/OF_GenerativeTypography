@@ -22,6 +22,7 @@ void ofApp::setup(){
 	fbo.allocate(ofGetWidth(), ofGetHeight(), GL_RGBA);
 	pix.allocate(ofGetWidth(), ofGetHeight(), OF_PIXELS_RGBA);
 	fbo.begin();
+	ofClear(0, 0, 0, 0);
 	// Center string code from:
 	// https://github.com/armadillu/ofxCenteredTrueTypeFont/blob/master/src/ofxCenteredTrueTypeFont.h
 	ofRectangle r = ttf.getStringBoundingBox(s, 0, 0);
