@@ -2,17 +2,28 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-	maxParticles = 250; // the maximum number of active particles
+	maxParticles = 1000; // the maximum number of active particles
 	drawMode = 0; // move through the drawing modes by clicking the mouse
 
 	bg_color = ofColor(255);
 	fbo_color = ofColor(0);
 
-	fbo.allocate(ofGetWidth(), ofGetHeight(), GL_RGBA);
-	fbo.begin();
+	bUpdateDrawMode = false;
+	bResetParticles = true;
+
+	ofBackground(bg_color);
+	ofSetBackgroundAuto(false);
+	ofEnableAntiAliasing();
+	ofSetFrameRate(60);
+
 	ofTrueTypeFont ttf;
 	ttf.loadFont(OF_TTF_SANS, 350);
 	string s = "TYPE";
+
+	fbo.allocate(ofGetWidth(), ofGetHeight(), GL_RGBA);
+	pix.allocate(ofGetWidth(), ofGetHeight(), OF_PIXELS_RGBA);
+	fbo.begin();
+	ofClear(0, 0, 0, 0);
 	// Center string code from:
 	// https://github.com/armadillu/ofxCenteredTrueTypeFont/blob/master/src/ofxCenteredTrueTypeFont.h
 	ofRectangle r = ttf.getStringBoundingBox(s, 0, 0);
@@ -22,50 +33,61 @@ void ofApp::setup(){
 	fbo.end();
 
 	fbo.readToPixels(pix); // the ofPixels class has a convenient getColor() method
-
-	ofBackground(bg_color);
-	ofSetBackgroundAuto(false);
-
-	ofEnableAntiAliasing();
-	ofSetFrameRate(60); // cap frameRate otherwise it goes too fast
-
-	bReset = true;
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-	if(bReset){
+	if(bUpdateDrawMode){
+		updateDrawMode();
+	}
+	if(bResetParticles){
 		resetParticles();
 	}
 	for(int i = 0; i < particles.size(); i++){
-		particles[i].update();
+		particles[i]->update();
 	}
+	ofSetWindowTitle("drawMode: " + ofToString(drawMode) + " | numParticles: " + ofToString(particles.size()) + " | fps: " + ofToString(ofGetFrameRate(), 0));
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-	// display each particle in the list
 	for(int i = 0; i < particles.size(); i++){
-		particles[i].display();
+		particles[i]->display();
 	}
 }
 
-//--------------------------------------------------------------
-void ofApp::resetParticles(){
-	bReset = false;
-	particles.clear();
-	while(particles.size() < maxParticles){
-		particles.push_back(Particle(pix, fbo_color, drawMode));
-	}
-}
-
-//--------------------------------------------------------------
-void ofApp::mousePressed(int x, int y, int button){
+void ofApp::updateDrawMode(){
 	drawMode = ++drawMode % 4; // move through 4 drawing modes (0, 1, 2, 3)
 	ofBackground(bg_color); // clear the screen when changing drawing mode
 	if(drawMode == 2){
 		ofSetColor(255);
 		fbo.draw(0, 0); // draw text to the screen for drawMode 2
 	}
-	bReset = true;
+	bResetParticles = true;
+	bUpdateDrawMode = false;
+}
+
+//--------------------------------------------------------------
+void ofApp::resetParticles(){
+	// clear existing particles
+	particles.clear();
+	for(int i = 0; i < particles.size(); i++){
+		delete particles[i];
+		particles[i] = NULL;
+	}
+	// create new particles
+	if(particles.size() < maxParticles){
+		int difference = maxParticles - particles.size();
+		for(int i = 0; i < difference; i++){
+			Particle * p = new Particle();
+			p->setup(&pix, fbo_color, drawMode);
+			particles.push_back(p);
+		}
+	}
+	bResetParticles = false;
+}
+
+//--------------------------------------------------------------
+void ofApp::mousePressed(int x, int y, int button){
+	bUpdateDrawMode = true;
 }

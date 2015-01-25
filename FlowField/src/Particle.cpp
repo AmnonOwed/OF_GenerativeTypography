@@ -1,7 +1,12 @@
 #include "Particle.h"
 
-Particle::Particle(ofPixels & _pix, ofColor & _c, int & _drawMode){
-	pix = _pix;
+Particle::Particle(){
+	pixPtr = NULL;
+}
+
+//--------------------------------------------------------------
+void Particle::setup(ofPixels * _pix, ofColor _c, int _drawMode){
+	pixPtr = _pix;
 	c = _c;
 	drawMode = _drawMode;
 
@@ -70,5 +75,10 @@ void Particle::getPosition(){
 
 //--------------------------------------------------------------
 bool Particle::isInText(){
-	return (pix.getColor(loc.x, loc.y) == c);
+	if(pixPtr){
+		return (pixPtr->getColor(loc.x, loc.y) == c);
+	}
+	else{
+		return true;
+	}
 }
