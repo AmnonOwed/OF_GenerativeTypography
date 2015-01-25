@@ -16,6 +16,8 @@ The original Processing code repository can be found [here ](https://github.com/
 
 All code examples ported by [Amnon Owed](http://vimeo.com/amnon) / [@AmnonOwed](https://twitter.com/AmnonOwed) with [OpenFrameworks 0.8.4.](http://www.openframeworks.cc/)
 
+Special thanks to all the helpful folks at the [OpenFrameworks forum](http://forum.openframeworks.cc/) (drakko, jvcleave, hubris)! :)
+
 Recommended order:
 
 1. Getting Started
