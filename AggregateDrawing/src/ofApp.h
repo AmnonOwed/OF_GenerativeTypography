@@ -9,10 +9,14 @@ class ofApp : public ofBaseApp {
 		void update();
 		void draw();
 
+		void updateDrawMode();
+
 		void mousePressed(int x, int y, int button);
 
 		int drawSpeed;
 		int drawMode;
+
+		bool bUpdateDrawMode;
 
 		ofColor bg_color;
 		ofColor fbo_color;

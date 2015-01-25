@@ -8,12 +8,22 @@ void ofApp::setup(){
 	bg_color = ofColor(255);
 	fbo_color = ofColor(0);
 
-	ofFbo fbo;
-	fbo.allocate(ofGetWidth(), ofGetHeight(), GL_RGBA);
-	fbo.begin();
+	bUpdateDrawMode = false;
+
+	ofBackground(bg_color);
+	ofSetBackgroundAuto(false);
+	ofEnableAntiAliasing();
+	ofSetFrameRate(60); // cap frameRate otherwise it goes too fast
+	ofSetRectMode(OF_RECTMODE_CENTER);
+
 	ofTrueTypeFont ttf;
 	ttf.loadFont(OF_TTF_SANS, 350);
 	string s = "TYPE";
+
+	ofFbo fbo;
+	fbo.allocate(ofGetWidth(), ofGetHeight(), GL_RGBA);
+	pix.allocate(ofGetWidth(), ofGetHeight(), OF_PIXELS_RGBA);
+	fbo.begin();
 	// Center string code from:
 	// https://github.com/armadillu/ofxCenteredTrueTypeFont/blob/master/src/ofxCenteredTrueTypeFont.h
 	ofRectangle r = ttf.getStringBoundingBox(s, 0, 0);
@@ -23,19 +33,13 @@ void ofApp::setup(){
 	fbo.end();
 
 	fbo.readToPixels(pix); // the ofPixels class has a convenient getColor() method
-
-	ofBackground(bg_color);
-	ofSetBackgroundAuto(false);
-
-	ofSetRectMode(OF_RECTMODE_CENTER);
-
-	ofEnableAntiAliasing();
-	ofSetFrameRate(60); // cap frameRate otherwise it goes too fast
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-
+	if(bUpdateDrawMode){
+		updateDrawMode();
+	}
 }
 
 //--------------------------------------------------------------
@@ -103,7 +107,13 @@ void ofApp::draw(){
 }
 
 //--------------------------------------------------------------
-void ofApp::mousePressed(int x, int y, int button){
-	ofBackground(bg_color); // clear the screen when changing drawing mode
+void ofApp::updateDrawMode(){
 	drawMode = ++drawMode % 3; // move through 3 drawing modes (0, 1, 2)
+	ofBackground(bg_color); // clear the screen when changing drawing mode
+	bUpdateDrawMode = false;
+}
+
+//--------------------------------------------------------------
+void ofApp::mousePressed(int x, int y, int button){
+	bUpdateDrawMode = true;
 }
