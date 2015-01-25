@@ -11,6 +11,7 @@ class ofApp : public ofBaseApp {
 		void update();
 		void draw();
 
+		void updateDrawMode();
 		void resetParticles();
 
 		void mousePressed(int x, int y, int button);
@@ -21,9 +22,11 @@ class ofApp : public ofBaseApp {
 		ofColor bg_color;
 		ofColor fbo_color;
 
+		bool bUpdateDrawMode;
+		bool bResetParticles;
+
 		ofFbo fbo;
 		ofPixels pix;
 
-		vector <Particle> particles;
-		bool bReset;
+		vector <Particle *> particles;
 };
