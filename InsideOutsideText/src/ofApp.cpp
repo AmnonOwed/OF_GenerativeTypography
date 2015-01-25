@@ -2,19 +2,26 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-
 	lineLength = 25; // length of drawn lines
 	reverseDrawing = false; // boolean to flip the drawing method (toggle with mouse)
 	ellipse_color = ofColor(0); // color of drawn ellipses
 	line_color = ofColor(0, 125); // color of drawn lines
 	fbo_color = ofColor(0);
 
-	ofFbo fbo;
-	fbo.allocate(ofGetWidth(), ofGetHeight(), GL_RGBA);
-	fbo.begin();
+	ofBackground(255);
+	ofSetLineWidth(0.5);
+	ofEnableAntiAliasing();
+	ofEnableSmoothing();
+	ofSetFrameRate(60);
+
 	ofTrueTypeFont ttf;
 	ttf.loadFont(OF_TTF_SANS, 350);
 	string s = "TYPE";
+
+	ofFbo fbo;
+	fbo.allocate(ofGetWidth(), ofGetHeight(), GL_RGBA);
+	pix.allocate(ofGetWidth(), ofGetHeight(), OF_PIXELS_RGBA);
+	fbo.begin();
 	// Center string code from:
 	// https://github.com/armadillu/ofxCenteredTrueTypeFont/blob/master/src/ofxCenteredTrueTypeFont.h
 	ofRectangle r = ttf.getStringBoundingBox(s, 0, 0);
@@ -24,13 +31,6 @@ void ofApp::setup(){
 	fbo.end();
 
 	fbo.readToPixels(pix); // the ofPixels class has a convenient getColor() method
-
-	ofBackground(255);
-	ofSetLineWidth(0.5);
-
-	ofEnableAntiAliasing();
-	ofEnableSmoothing();
-	ofSetFrameRate(60); // cap frameRate otherwise it goes too fast
 }
 
 //--------------------------------------------------------------
