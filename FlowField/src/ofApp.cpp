@@ -70,11 +70,11 @@ void ofApp::updateDrawMode(){
 //--------------------------------------------------------------
 void ofApp::resetParticles(){
 	// clear existing particles
-	particles.clear();
 	for(int i = 0; i < particles.size(); i++){
 		delete particles[i];
 		particles[i] = NULL;
 	}
+	particles.clear();
 	// create new particles
 	if(particles.size() < maxParticles){
 		int difference = maxParticles - particles.size();
