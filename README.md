@@ -29,7 +29,7 @@ Recommended order:
 2. Image-Based
   - [x] InsideOutsideText
   - [ ] GradientCutout
-  - [ ] Waves
+  - [x] Waves
   - [x] AggregateDrawing
   - [x] AggregateParticles
   - [x] FlowField
