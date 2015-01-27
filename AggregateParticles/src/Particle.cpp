@@ -34,11 +34,11 @@ void Particle::update(){
 
 	 case 1:
 	 case 2:
-		 life -= lifeRate; // decrease life by the lifeRate (the particle is removed when no life is left)
+		 life -= lifeRate;
 		 break;
 
 	 case 3:
-		 // combine the behaviors of case 0 (keep particle inside text) and 1 (decrease life, remove particle)
+		 // combine the behaviors of case 0 (keep particle inside text) and 1 (decrease life)
 		 if(!isInText()){
 			 getPosition();
 		 }
