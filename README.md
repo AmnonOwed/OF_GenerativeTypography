@@ -33,7 +33,7 @@ Recommended order:
   - [x] AggregateDrawing
   - [x] AggregateParticles
   - [x] FlowField
-  - [ ] FlowFieldVariant
+  - [x] FlowFieldVariant
   - [ ] ReactionDiffusion
 
 3. PDF Export
