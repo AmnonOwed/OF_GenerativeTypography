@@ -47,7 +47,7 @@ void Particle::update(){
 	vel.set(1, 0);
 	vel.rotate(angle + (drawMode == 2 || drawMode == 3 ? fmod(ofGetElapsedTimef() * 33, 360) : 0));
 	loc += vel;
-	life -= lifeRate; // decrease life by the lifeRate (the particle is removed by the addRemoveParticles() method when no life is left)
+	life -= lifeRate;
 	if(life < 0){
 		getPosition();
 		life = ofRandom(0.5 * maxLife, maxLife);
