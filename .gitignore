@@ -18,6 +18,8 @@
 *.cpp.eep
 *.cpp.elf
 *.cpp.hex
+*.dll
+*.exe
 
 #########################
 # IDE
