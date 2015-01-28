@@ -23,7 +23,7 @@ Recommended order:
 1. Getting Started
   - [x] DisplayText
   - [ ] AvailableFonts
-  - [ ] CustomFont
+  - [x] CustomFont
   - [ ] UsingPGraphics
 
 2. Image-Based
