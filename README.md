@@ -1,9 +1,12 @@
 Generative Typography
 =====================
 
-This is an OpenFrameworks port of the CAN_GenerativeTypography examples, originally written in Processing.
-I am doing this port purely for learning purposes, so it may contain incorrect, inefficient or incomplete code.
-It's a work-in-progress, which may or may not be fully completed. You can follow / see the progress in the list below.
+This is an openFrameworks port of my CAN_GenerativeTypography examples, originally written in Processing.
+I am doing this port mainly for learning purposes, but I hope it may be of use to others as well.
+The list of examples shows the original, recommended order and also shows which examples have been ported.
+In some cases, there is no openFrameworks equivalent (~~strikethrough~~).
+In some cases, there is a comparable alternative (~~strikethrough~~ NewName).
+In some cases, an example is added specifically for openFrameworks **(OF)**.
 
 Steps to run the examples:
 
@@ -16,16 +19,16 @@ The original Processing code repository can be found [here ](https://github.com/
 
 All code examples ported by [Amnon Owed](http://vimeo.com/amnon) / [@AmnonOwed](https://twitter.com/AmnonOwed) with [OpenFrameworks 0.8.4.](http://www.openframeworks.cc/)
 
-Special thanks to all the helpful folks at the [OpenFrameworks forum](http://forum.openframeworks.cc/) (drakko, jvcleave, hubris)! :)
+Special thanks to all the helpful folks (drakko, jvcleave, hubris) at the [OpenFrameworks forum](http://forum.openframeworks.cc/)! :)
 
 Recommended order:
 
 1. Getting Started
   - [x] DisplayText
-  - [ ] AvailableFonts
+  - [ ] ~~AvailableFonts~~
   - [x] CustomFont
   - [x] ~~UsingPGraphics~~ UsingFbo
-  - [x] MultiSampling **(oF)**
+  - [x] MultiSampling **(OF)**
 
 2. Image-Based
   - [x] InsideOutsideText
