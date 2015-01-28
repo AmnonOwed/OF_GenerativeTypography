@@ -4,6 +4,7 @@ Generative Typography
 This is an openFrameworks port of my CAN_GenerativeTypography examples, originally written in Processing.
 I am doing this port mainly for learning purposes, but I hope it may be of use to others as well.
 The list of examples shows the original, recommended order and also shows which examples have been ported.
+
 In some cases, there is no openFrameworks equivalent (~~strikethrough~~).
 In some cases, there is a comparable alternative (~~strikethrough~~ NewName).
 In some cases, an example is added specifically for openFrameworks **(OF)**.
