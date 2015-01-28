@@ -21,7 +21,7 @@ Special thanks to all the helpful folks at the [OpenFrameworks forum](http://for
 Recommended order:
 
 1. Getting Started
-  - [ ] DisplayText
+  - [x] DisplayText
   - [ ] AvailableFonts
   - [ ] CustomFont
   - [ ] UsingPGraphics
