@@ -3,7 +3,6 @@
 # general
 #########################
 
-[Bb]in/
 [Bb]in/*
 ![Bb]in/data/
 [Bb]uild/
