@@ -25,6 +25,7 @@ Recommended order:
   - [ ] AvailableFonts
   - [x] CustomFont
   - [x] ~~UsingPGraphics~~ UsingFbo
+  - [x] MultiSampling **(oF)**
 
 2. Image-Based
   - [x] InsideOutsideText
