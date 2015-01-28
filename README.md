@@ -24,7 +24,7 @@ Recommended order:
   - [x] DisplayText
   - [ ] AvailableFonts
   - [x] CustomFont
-  - [ ] UsingPGraphics
+  - [x] ~~UsingPGraphics~~ UsingFbo
 
 2. Image-Based
   - [x] InsideOutsideText
