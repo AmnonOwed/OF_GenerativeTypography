@@ -44,7 +44,7 @@ Recommended order:
 3. PDF Export
   - [x] WavesPDF
   - [x] CirclePacking
-  - [ ] UsingGeomerative
+  - [x] ~~UsingGeomerative~~ StringAsPoints
   - [ ] LinesCircles
   - [ ] Ocean
   - [ ] VoronoiType
