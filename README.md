@@ -42,7 +42,7 @@ Recommended order:
   - [ ] ReactionDiffusion
 
 3. PDF Export
-  - [ ] WavesPDF
+  - [x] WavesPDF
   - [ ] CirclePacking
   - [ ] UsingGeomerative
   - [ ] LinesCircles
