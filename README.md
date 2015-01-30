@@ -43,7 +43,7 @@ Recommended order:
 
 3. PDF Export
   - [x] WavesPDF
-  - [ ] CirclePacking
+  - [x] CirclePacking
   - [ ] UsingGeomerative
   - [ ] LinesCircles
   - [ ] Ocean
