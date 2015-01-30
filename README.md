@@ -1,9 +1,13 @@
 Generative Typography
 =====================
 
-This is an openFrameworks port of my CAN_GenerativeTypography examples, originally written in Processing.
-I am doing this port mainly for learning purposes, but I hope it may be of use to others as well.
-The list of examples shows the original, recommended order and also shows which examples have been ported.
+OpenFrameworks Repository location: [https://github.com/AmnonOwed/OF_GenerativeTypography](https://github.com/AmnonOwed/OF_GenerativeTypography)
+
+Processing Repository location: [https://github.com/AmnonOwed/CAN_GenerativeTypography](https://github.com/AmnonOwed/CAN_GenerativeTypography)
+
+This is an openFrameworks port of the CAN_GenerativeTypography examples, originally written in Processing.
+I am doing this port mainly for learning purposes, but of course I hope it may be of use to others as well.
+The list of examples shows the recommended order and also shows which examples have been ported so far.
 
 In some cases, there is no openFrameworks equivalent (~~strikethrough~~).
 In some cases, there is a comparable alternative (~~strikethrough~~ NewName).
@@ -16,11 +20,9 @@ Steps to run the examples:
 
 The original blog post can be found [here](http://www.creativeapplications.net/processing/generative-typography-processing-tutorial).
 
-The original Processing code repository can be found [here ](https://github.com/AmnonOwed/CAN_GenerativeTypography).
-
 All code examples ported by [Amnon Owed](http://vimeo.com/amnon) / [@AmnonOwed](https://twitter.com/AmnonOwed) with [OpenFrameworks 0.8.4.](http://www.openframeworks.cc/)
 
-Special thanks to all the helpful folks (drakko, jvcleave, hubris) at the [OpenFrameworks forum](http://forum.openframeworks.cc/)! :)
+Special thanks to the helpful folks (drakko, jvcleave, hubris) at the [OpenFrameworks forum](http://forum.openframeworks.cc/)! :)
 
 Recommended order:
 
