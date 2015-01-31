@@ -47,7 +47,7 @@ Recommended order:
   - [x] WavesPDF
   - [x] CirclePacking
   - [x] ~~UsingGeomerative~~ StringAsPoints
-  - [ ] LinesCircles
+  - [x] LinesCircles
   - [ ] Ocean
   - [ ] VoronoiType
   - [ ] VoronoiVariant
