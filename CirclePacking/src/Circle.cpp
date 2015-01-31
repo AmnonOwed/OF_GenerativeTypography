@@ -30,10 +30,10 @@ void Circle::update(){
 void Circle::display(){
 	ofFill();
 	ofSetColor(c);
-	ofEllipse(x, y, 2 * radius, 2 * radius);
+	ofCircle(x, y, radius);
 	ofNoFill();
 	ofSetColor(0);
-	ofEllipse(x, y, 2 * radius, 2 * radius);
+	ofCircle(x, y, radius);
 }
 
 void Circle::overlap(const vector <Circle *> circles){
