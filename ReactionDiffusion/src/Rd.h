@@ -17,7 +17,6 @@ class Rd {
 		void setImage(ofPixels input);
 		ofImage getImage(ofColor c1, ofColor c2);
 
-		// TODO: use more vectors instead of arrays?
 		int w, h; // 2D dimensions
 		int arrayLength; // Array length for all arrays (w * h)
 		vector <float> A, An, Ad; // Substance A (value, next value, diffusion rate)
