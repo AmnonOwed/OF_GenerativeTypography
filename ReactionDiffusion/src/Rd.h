@@ -15,7 +15,7 @@ class Rd {
 		void reaction();
 		void kickstart(int num);
 		void setImage(ofPixels input);
-		void getImage(ofImage & image, const ofColor c1, const ofColor c2);
+		void getImage(ofImage & image, const ofColor & c1, const ofColor & c2);
 
 		int w, h; // 2D dimensions
 		int arrayLength; // Array length for all arrays (w * h)
