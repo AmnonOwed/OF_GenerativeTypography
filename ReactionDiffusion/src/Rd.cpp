@@ -142,7 +142,7 @@ void Rd::setImage(ofPixels input){
 
 //--------------------------------------------------------------
 // return the visual output of the simulation
-void Rd::getImage(ofImage & image, ofColor c1, ofColor c2){
+void Rd::getImage(ofImage & image, const ofColor c1, const ofColor c2){
 	for(int y = 0; y < image.height; y++){
 		for(int x = 0; x < image.width; x++){
 			int index = x + y * w;
