@@ -15,7 +15,7 @@ class Rd {
 		void reaction();
 		void kickstart(int num);
 		void setImage(ofPixels input);
-		ofImage getImage(ofColor c1, ofColor c2);
+		void getImage(ofImage & image, ofColor c1, ofColor c2);
 
 		int w, h; // 2D dimensions
 		int arrayLength; // Array length for all arrays (w * h)
@@ -25,7 +25,6 @@ class Rd {
 		float F[2]; // Feed rates (2)
 		float K[2]; // Kill rates (2)
 		vector <float> D; // Division rates
-		ofImage image; // Visual output
 };
 
 #endif // RD_H

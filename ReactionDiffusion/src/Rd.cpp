@@ -7,7 +7,6 @@ void Rd::setup(int _w, int _h){
 	arrayLength = w * h;
 	setupNeighbourMap();
 	setupDefaults();
-	image.allocate(w, h, OF_IMAGE_COLOR);
 }
 
 //--------------------------------------------------------------
@@ -143,7 +142,7 @@ void Rd::setImage(ofPixels input){
 
 //--------------------------------------------------------------
 // return the visual output of the simulation
-ofImage Rd::getImage(ofColor c1, ofColor c2){
+void Rd::getImage(ofImage & image, ofColor c1, ofColor c2){
 	for(int y = 0; y < image.height; y++){
 		for(int x = 0; x < image.width; x++){
 			int index = x + y * w;
@@ -153,5 +152,4 @@ ofImage Rd::getImage(ofColor c1, ofColor c2){
 		}
 	}
 	image.update();
-	return image;
 }
