@@ -41,7 +41,7 @@ Recommended order:
   - [x] AggregateParticles
   - [x] FlowField
   - [x] FlowFieldVariant
-  - [ ] ReactionDiffusion
+  - [x] ReactionDiffusion
 
 3. PDF Export
   - [x] WavesPDF
