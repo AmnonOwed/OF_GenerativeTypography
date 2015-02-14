@@ -18,7 +18,7 @@ class Rd {
 		void getImage(ofImage & image, const ofColor & c1, const ofColor & c2);
 
 		int w, h; // 2D dimensions
-		int arrayLength; // Array length for all arrays (w * h)
+		int vectorSize; // Size for all the vectors (w * h)
 		vector <float> A, An, Ad; // Substance A (value, next value, diffusion rate)
 		vector <float> B, Bn, Bd; // Substance B (value, next value, diffusion rate)
 		vector <vector <int> > N; // Neighbour references for diffusion method (4 in 2D: left, right, up, down)

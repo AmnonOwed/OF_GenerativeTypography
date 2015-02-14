@@ -15,9 +15,6 @@ class ofApp : public ofBaseApp {
 		ofColor bg_color;
 		ofColor fbo_color;
 
-		ofFbo fbo;
-		ofPixels pix;
-
 		ofImage result;
 
 		Rd rd;

@@ -4,13 +4,13 @@
 void Rd::setup(int _w, int _h){
 	w = _w;
 	h = _h;
-	arrayLength = w * h;
+	vectorSize = w * h;
 	setupNeighbourMap();
 	setupDefaults();
 }
 
 //--------------------------------------------------------------
-// Create a neighbor map for neighbour lookup acceleration
+// Create a neighbour map for neighbour lookup acceleration
 void Rd::setupNeighbourMap(){
 	for(int i = 0; i < w; i++){
 		for(int j = 0; j < h; j++){
@@ -46,25 +46,17 @@ void Rd::setupNeighbourMap(){
 }
 
 //--------------------------------------------------------------
-// Setup arrays and default values
+// Setup vectors with default values
 void Rd::setupDefaults(){
-	A.resize(arrayLength);
-	An.resize(arrayLength);
-	Ad.resize(arrayLength);
+	A = vector <float>(vectorSize, 1.0f);
+	An = vector <float>(vectorSize, 1.0f);
+	Ad = vector <float>(vectorSize, 0.5f);
 
-	B.resize(arrayLength);
-	Bn.resize(arrayLength);
-	Bd.resize(arrayLength);
+	B = vector <float>(vectorSize, 0.0f);
+	Bn = vector <float>(vectorSize, 0.0f);
+	Bd = vector <float>(vectorSize, 0.25f);
 
-	D.resize(arrayLength);
-
-	for(int i = 0; i < arrayLength; i++){
-		A[i] = An[i] = 1.0f;
-		B[i] = Bn[i] = 0.0f;
-
-		Ad[i] = 0.5f;
-		Bd[i] = 0.25f;
-	}
+	D = vector <float>(vectorSize, 0.0f);
 }
 
 //--------------------------------------------------------------
@@ -93,7 +85,7 @@ void Rd::diffusion(){
 	for(int i = 0; i < w; i++){
 		for(int j = 0; j < h; j++){
 			int p = i + j * w;
-			vector <int> P = N[p];
+			const vector <int> & P = N[p];
 			An[p] = A[p] + Ad[p] * ((A[P[0]] + A[P[1]] + A[P[2]] + A[P[3]] - 4 * A[p]) / 4.0f);
 			Bn[p] = B[p] + Bd[p] * ((B[P[0]] + B[P[1]] + B[P[2]] + B[P[3]] - 4 * B[p]) / 4.0f);
 		}
@@ -125,7 +117,7 @@ void Rd::reaction(){
 // randomly set substance values to kickstart the simulation
 void Rd::kickstart(int num){
 	for(int i = 0; i < num; i++){
-		B[int(ofRandom(arrayLength))] = 1.0f;
+		B[int(ofRandom(vectorSize))] = 1.0f;
 	}
 }
 
@@ -134,14 +126,14 @@ void Rd::kickstart(int num){
 void Rd::setImage(ofPixels input){
 	input.resize(w, h); // resize input image to simulation dimensions
 	int numChannels = input.getNumChannels();
-	for(int i = 0; i < arrayLength; i++){
+	for(int i = 0; i < vectorSize; i++){
 		int a = input[i * numChannels + 3]; // get alpha of pixel
 		D[i] = a / 255.0;
 	}
 }
 
 //--------------------------------------------------------------
-// return the visual output of the simulation
+// create a visual representation of the simulation
 void Rd::getImage(ofImage & image, const ofColor & c1, const ofColor & c2){
 	for(int y = 0; y < image.height; y++){
 		for(int x = 0; x < image.width; x++){

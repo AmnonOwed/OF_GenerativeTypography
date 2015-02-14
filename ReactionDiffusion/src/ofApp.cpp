@@ -15,6 +15,8 @@ void ofApp::setup(){
 	ttf.loadFont(OF_TTF_SANS, 350);
 	string s = "TYPE";
 
+	ofFbo fbo;
+	ofPixels pix;
 	fbo.allocate(ofGetWidth(), ofGetHeight(), GL_RGBA);
 	pix.allocate(ofGetWidth(), ofGetHeight(), OF_PIXELS_RGBA);
 	fbo.begin();
@@ -33,7 +35,7 @@ void ofApp::setup(){
 	int h = 180;
 	// setup the reaction-diffusion simulation
 	rd.setup(w, h); // setup the simulation with the specified width and height
-	rd.setFeedRates(0.0374, 0.0585); // set the in & out feed rates (in this sketch also dynamically changed in the draw() loop)
+	rd.setFeedRates(0.0374, 0.0585); // set the in & out feed rates (in this sketch also dynamically changed in the update() loop)
 	rd.setKillRates(0.0695, 0.0610); // set the in & out kill rates
 	rd.kickstart(150); // randomly set N substance values to kickstart the simulation
 	rd.setImage(pix); // use the ofPixels object of the offscreen fbo to set the division rates
@@ -48,8 +50,7 @@ void ofApp::update(){
 	float outerFeedValue = ofMap(mouseX, 0, ofGetWidth(), 0.0222, 0.0888);
 	rd.setFeedRates(innerFeedValue, outerFeedValue);
 	rd.step(1); // number of simulation steps per frame
-	// get the result of the simulation into the image
-	rd.getImage(result, fg_color, bg_color);
+	rd.getImage(result, fg_color, bg_color); // put the result of the simulation into the image
 	ofSetWindowTitle("fps: " + ofToString(ofGetFrameRate(), 0));
 }
 
