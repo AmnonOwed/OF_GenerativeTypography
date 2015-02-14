@@ -49,7 +49,7 @@ void ofApp::update(){
 	float innerFeedValue = ofMap(mouseY, 0, ofGetHeight(), 0.0222, 0.0888);
 	float outerFeedValue = ofMap(mouseX, 0, ofGetWidth(), 0.0222, 0.0888);
 	rd.setFeedRates(innerFeedValue, outerFeedValue);
-	rd.step(1); // number of simulation steps per frame
+	rd.step(25); // number of simulation steps per frame
 	rd.getImage(result, fg_color, bg_color); // put the result of the simulation into the image
 	ofSetWindowTitle("fps: " + ofToString(ofGetFrameRate(), 0));
 }

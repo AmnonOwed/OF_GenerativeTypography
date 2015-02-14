@@ -12,29 +12,33 @@ void Rd::setup(int _w, int _h){
 //--------------------------------------------------------------
 // Create a neighbour map for neighbour lookup acceleration
 void Rd::setupNeighbourMap(){
-	for(int i = 0; i < w; i++){
-		for(int j = 0; j < h; j++){
+	for(int y = 0; y < h; y++){
+		for(int x = 0; x < w; x++){
 			vector <int> neighbours;
-			int p = i + j * w;
-			if(i == 0){
+			int p = x + y * w;
+			// left neighbour
+			if(x == 0){
 				neighbours.push_back(p + (w - 1));
 			}
 			else{
 				neighbours.push_back(p - 1);
 			}
-			if(i == w - 1){
+			// right neighbour
+			if(x == w - 1){
 				neighbours.push_back(p - (w - 1));
 			}
 			else{
 				neighbours.push_back(p + 1);
 			}
-			if(j == 0){
+			// top neighbour
+			if(y == 0){
 				neighbours.push_back(p + w * (h - 1));
 			}
 			else{
 				neighbours.push_back(p - w);
 			}
-			if(j == h - 1){
+			// bottom neighbour
+			if(y == h - 1){
 				neighbours.push_back(p - w * (h - 1));
 			}
 			else{
