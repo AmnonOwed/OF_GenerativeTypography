@@ -86,13 +86,10 @@ void Rd::step(int numSteps){
 //--------------------------------------------------------------
 // Diffusion method (makes use of a neighbour map for speedup)
 void Rd::diffusion(){
-	for(int i = 0; i < w; i++){
-		for(int j = 0; j < h; j++){
-			int p = i + j * w;
-			const vector <int> & P = N[p];
-			An[p] = A[p] + Ad[p] * ((A[P[0]] + A[P[1]] + A[P[2]] + A[P[3]] - 4 * A[p]) / 4.0f);
-			Bn[p] = B[p] + Bd[p] * ((B[P[0]] + B[P[1]] + B[P[2]] + B[P[3]] - 4 * B[p]) / 4.0f);
-		}
+	for(int p = 0; p < vectorSize; p++){
+		const vector <int> & P = N[p];
+		An[p] = A[p] + Ad[p] * ((A[P[0]] + A[P[1]] + A[P[2]] + A[P[3]] - 4 * A[p]) / 4.0f);
+		Bn[p] = B[p] + Bd[p] * ((B[P[0]] + B[P[1]] + B[P[2]] + B[P[3]] - 4 * B[p]) / 4.0f);
 	}
 	// after calculating next matrix, copy it into current matrix
 	A = An;
@@ -102,18 +99,15 @@ void Rd::diffusion(){
 //--------------------------------------------------------------
 // Reaction method (Gray-Scott)
 void Rd::reaction(){
-	for(int i = 0; i < w; i++){
-		for(int j = 0; j < h; j++){
-			int p = i + j * w;
-			float a = A[p];
-			float b = B[p];
-			float ab2 = a * b * b;
-			// use the division rate to determine this cells feed and kill rate
-			float feedRate = D[p] * F[0] + (1 - D[p]) * F[1];
-			float killRate = D[p] * K[0] + (1 - D[p]) * K[1];
-			A[p] = A[p] - ab2 + feedRate * (1.0f - a);
-			B[p] = B[p] + ab2 - (feedRate + killRate) * b;
-		}
+	for(int p = 0; p < vectorSize; p++){
+		float a = A[p];
+		float b = B[p];
+		float ab2 = a * b * b;
+		// use the division rate to determine this cells feed and kill rate
+		float feedRate = D[p] * F[0] + (1 - D[p]) * F[1];
+		float killRate = D[p] * K[0] + (1 - D[p]) * K[1];
+		A[p] = A[p] - ab2 + feedRate * (1.0f - a);
+		B[p] = B[p] + ab2 - (feedRate + killRate) * b;
 	}
 }
 
@@ -139,13 +133,12 @@ void Rd::setImage(ofPixels input){
 //--------------------------------------------------------------
 // create a visual representation of the simulation
 void Rd::getImage(ofImage & image, const ofColor & c1, const ofColor & c2){
-	for(int y = 0; y < image.height; y++){
-		for(int x = 0; x < image.width; x++){
-			int index = x + y * w;
-			ofColor c = c1;
-			c.lerp(c2, A[index] * A[index]);
-			image.setColor(x, y, c);
-		}
+	unsigned char * pixels = image.getPixels();
+	for(int indexImg = 0, indexA = 0; indexA < A.size(); indexImg += 3, indexA++){
+		ofColor c = c1.getLerped(c2, A[indexA] * A[indexA]);
+		pixels[indexImg] = c.r;
+		pixels[indexImg + 1] = c.b;
+		pixels[indexImg + 2] = c.g;
 	}
 	image.update();
 }
