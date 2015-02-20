@@ -22,7 +22,7 @@ The original blog post can be found [here](http://www.creativeapplications.net/p
 
 All code examples ported by [Amnon Owed](http://vimeo.com/amnon) / [@AmnonOwed](https://twitter.com/AmnonOwed) with [OpenFrameworks 0.8.4.](http://www.openframeworks.cc/)
 
-Special thanks to the helpful folks (drakko, jvcleave, hubris) at the [OpenFrameworks forum](http://forum.openframeworks.cc/)! :)
+Special thanks to the helpful folks (drakko, jvcleave, hubris, arturo) at the [OpenFrameworks forum](http://forum.openframeworks.cc/)! :)
 
 Recommended order:
 
@@ -48,7 +48,7 @@ Recommended order:
   - [x] CirclePacking
   - [x] ~~UsingGeomerative~~ StringAsPoints
   - [x] LinesCircles
-  - [ ] Ocean
+  - [x] Ocean
   - [ ] VoronoiType
   - [ ] VoronoiVariant
 
