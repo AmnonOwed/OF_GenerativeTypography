@@ -69,7 +69,7 @@ void ofApp::update(){
 			vector <ofVec2f> & charPoints = points[i];
 			for(int j = 0; j < charPoints.size(); j++){
 				ofVec2f & p = charPoints[j];
-				p += FlowField::getVelocity(p);
+				p += getVelocity(p);
 			}
 		}
 	}
@@ -141,6 +141,15 @@ void ofApp::reset(){
 	}
 
 	bReset = false;
+}
+
+//--------------------------------------------------------------
+ofVec2f ofApp::getVelocity(const ofVec2f & pos){
+	float factor = 0.005;
+	float angle = ofNoise(pos.x * factor, pos.y * factor, ofGetFrameNum() * factor) * 360;
+	ofVec2f vel(0.5, 0);
+	vel.rotate(angle);
+	return vel;
 }
 
 //--------------------------------------------------------------

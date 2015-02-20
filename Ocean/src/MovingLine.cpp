@@ -14,7 +14,7 @@ void MovingLine::setup(vector <ofVec2f> _vertices, ofApp * _ptrOfApp){
 void MovingLine::update(){
 	for(int i = 0; i < vertices.size(); i++){
 		ofVec2f & v = vertices[i];
-		v += FlowField::getVelocity(v);
+		v += ptrOfApp->getVelocity(v);
 	}
 	vertices[0].x = 0;
 }

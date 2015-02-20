@@ -2,7 +2,6 @@
 
 #include "ofMain.h"
 
-#include "FlowField.h"
 #include "MovingLine.h"
 
 class ofApp : public ofBaseApp {
@@ -13,6 +12,7 @@ class ofApp : public ofBaseApp {
 		void draw();
 
 		void reset();
+		ofVec2f getVelocity(const ofVec2f & pos);
 		void keyPressed(int key);
 
 		bool saveOneFrame;

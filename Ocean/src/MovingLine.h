@@ -2,7 +2,6 @@
 #define MOVINGLINE_H
 
 #include "ofMain.h"
-#include "FlowField.h"
 
 class ofApp;
 
