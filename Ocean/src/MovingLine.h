@@ -2,6 +2,7 @@
 #define MOVINGLINE_H
 
 #include "ofMain.h"
+#include "FlowField.h"
 
 class MovingLine {
 	public:
@@ -12,7 +13,6 @@ class MovingLine {
 		void display(float minX, float maxX);
 
 		bool isFullyOutsideBoundaries(float minimum);
-		ofVec2f getVelocity(const ofVec2f & pos);
 
 		vector <ofVec2f> vertices;
 };

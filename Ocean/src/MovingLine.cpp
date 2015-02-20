@@ -12,7 +12,7 @@ void MovingLine::setup(vector <ofVec2f> _vertices){
 void MovingLine::update(){
 	for(int i = 0; i < vertices.size(); i++){
 		ofVec2f & v = vertices[i];
-		v += getVelocity(v);
+		v += FlowField::getVelocity(v);
 	}
 	vertices[0].x = 0;
 }
@@ -37,15 +37,4 @@ bool MovingLine::isFullyOutsideBoundaries(float minimum){
 		}
 	}
 	return true;
-}
-
-//--------------------------------------------------------------
-// flowfield to generate the velocities for the points in the line
-ofVec2f MovingLine::getVelocity(const ofVec2f & pos){
-	float factor = 0.005;
-	float angle = ofNoise(pos.x * factor, pos.y * factor, ofGetFrameNum() * factor) * 360;
-	ofVec2f vel(1, 0);
-	vel.rotate(angle);
-	vel.limit(0.65); // maximize the movement speed
-	return vel;
 }
