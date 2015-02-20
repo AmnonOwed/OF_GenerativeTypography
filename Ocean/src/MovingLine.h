@@ -4,16 +4,19 @@
 #include "ofMain.h"
 #include "FlowField.h"
 
+class ofApp;
+
 class MovingLine {
 	public:
 		MovingLine();
 
-		void setup(vector <ofVec2f> _vertices);
+		void setup(vector <ofVec2f> _vertices, ofApp * _ptrOfApp);
 		void update();
-		void display(float minX, float maxX);
+		void display();
 
-		bool isFullyOutsideBoundaries(float minimum);
+		bool isFullyOutsideBoundaries();
 
+		ofApp * ptrOfApp;
 		vector <ofVec2f> vertices;
 };
 

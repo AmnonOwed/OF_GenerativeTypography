@@ -85,7 +85,7 @@ void ofApp::draw(){
 	ofSetLineWidth(0.65);
 	ofSetColor(95);
 	for(int i = 0; i < lines.size(); i++){
-		lines[i].display(minX, maxX);
+		lines[i].display();
 	}
 
 	// display the letters
@@ -122,11 +122,11 @@ void ofApp::reset(){
 		firstLineVecs.push_back(v);
 	}
 	MovingLine firstLine;
-	firstLine.setup(firstLineVecs);
+	firstLine.setup(firstLineVecs, this);
 	lines.push_back(firstLine);
 
 	MovingLine previousLine = lines.back();
-	while(!previousLine.isFullyOutsideBoundaries(minY)){
+	while(!previousLine.isFullyOutsideBoundaries()){
 		ofVec2f moveSpeed(ofRandom(-2, 3), ofRandom(-8, 2));
 		vector <ofVec2f> newLineVecs;
 		for(int i = 0; i < previousLine.vertices.size(); i++){
@@ -135,7 +135,7 @@ void ofApp::reset(){
 		}
 		newLineVecs[0].x = MIN(newLineVecs[0].x, minX);
 		MovingLine newLine;
-		newLine.setup(newLineVecs);
+		newLine.setup(newLineVecs, this);
 		lines.push_back(newLine);
 		previousLine = lines.back();
 	}

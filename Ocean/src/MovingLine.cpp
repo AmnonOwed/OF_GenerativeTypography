@@ -1,11 +1,13 @@
 #include "MovingLine.h"
+#include "ofApp.h"
 
 MovingLine::MovingLine(){
 }
 
 //--------------------------------------------------------------
-void MovingLine::setup(vector <ofVec2f> _vertices){
+void MovingLine::setup(vector <ofVec2f> _vertices, ofApp * _ptrOfApp){
 	vertices = _vertices;
+	ptrOfApp = _ptrOfApp;
 }
 
 //--------------------------------------------------------------
@@ -18,21 +20,21 @@ void MovingLine::update(){
 }
 
 //--------------------------------------------------------------
-void MovingLine::display(float minX, float maxX){
+void MovingLine::display(){
 	ofBeginShape();
-	ofCurveVertex(minX, vertices[0].y);
+	ofCurveVertex(ptrOfApp->minX, vertices[0].y);
 	for(int i = 0; i < vertices.size(); i++){
 		ofCurveVertex(vertices[i].x, vertices[i].y);
 	}
-	ofCurveVertex(maxX, vertices.back().y);
+	ofCurveVertex(ptrOfApp->maxX, vertices.back().y);
 	ofEndShape();
 }
 
 //--------------------------------------------------------------
 // check if the line is completely above the upper boundary (then it will return true)
-bool MovingLine::isFullyOutsideBoundaries(float minimum){
+bool MovingLine::isFullyOutsideBoundaries(){
 	for(int i = 0; i < vertices.size(); i++){
-		if(vertices[i].y > minimum){
+		if(vertices[i].y > ptrOfApp->minY){
 			return false;
 		}
 	}
