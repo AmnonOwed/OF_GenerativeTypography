@@ -53,8 +53,8 @@ Recommended order:
   - [ ] VoronoiVariant
 
 4. 3D
-  - [ ] Basic3DType
-  - [ ] HemeshToPShape
+  - [X] Basic3DType
+  - [ ] ~~HemeshToPShape~~ Basic3DTypeVBO
   - [ ] MeshManipulation
   - [ ] Deconstructed
   - [ ] SlicedUp
