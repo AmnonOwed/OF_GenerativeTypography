@@ -54,7 +54,7 @@ Recommended order:
 
 4. 3D
   - [X] Basic3DType
-  - [ ] ~~HemeshToPShape~~ Basic3DTypeVBO
+  - [X] ~~HemeshToPShape~~ Basic3DTypeVBO
   - [ ] MeshManipulation
   - [ ] Deconstructed
   - [ ] SlicedUp
