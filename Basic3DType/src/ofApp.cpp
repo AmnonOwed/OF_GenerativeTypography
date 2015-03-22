@@ -100,6 +100,7 @@ ofMesh ofApp::createMeshFromPath(ofPath path, float thickness){
 			for(int k = 0; k < numVerts; k++){
 				if(v.match(mesh.getVertices()[k])){
 					originalIndex = k;
+					break;
 				}
 			}
 			outlineIndices.push_back(originalIndex);
