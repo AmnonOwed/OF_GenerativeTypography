@@ -16,7 +16,8 @@ In some cases, an example is added specifically for openFrameworks **(OF)**.
 Steps to run the examples:
 
 1. Download or clone the complete repository into the **of_release\apps\** folder.
-2. Use the openFrameworks projectGenerator to create a runnable project for your chosen IDE from the provided src files. Note: has to be repeated for each separate example.
+2. Some examples require specific ofxAddons, which are mentioned after it's name in the list below.
+3. Use the openFrameworks projectGenerator to create a runnable project for your chosen IDE from the provided src files. Note: has to be repeated for each separate example.
 
 The original blog post can be found [here](http://www.creativeapplications.net/processing/generative-typography-processing-tutorial).
 
@@ -49,7 +50,7 @@ Recommended order:
   - [x] ~~UsingGeomerative~~ StringAsPoints
   - [x] LinesCircles
   - [x] Ocean
-  - [ ] VoronoiType
+  - [x] VoronoiType (requires [ofxVoronoi addon](https://github.com/AmnonOwed/ofxVoronoi))
   - [ ] VoronoiVariant
 
 4. 3D
