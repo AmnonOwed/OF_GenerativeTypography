@@ -51,7 +51,7 @@ Recommended order:
   - [x] LinesCircles
   - [x] Ocean
   - [x] VoronoiType (requires [ofxVoronoi addon](https://github.com/AmnonOwed/ofxVoronoi))
-  - [ ] VoronoiVariant
+  - [x] VoronoiVariant (requires [ofxVoronoi addon](https://github.com/AmnonOwed/ofxVoronoi))
 
 4. 3D
   - [X] Basic3DType
