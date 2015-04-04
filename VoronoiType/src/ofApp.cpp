@@ -108,14 +108,14 @@ void ofApp::draw(){
 		if(insideText[i]){
 			vector <ofPoint> & cellPoints = cells[i].pts;
 			ofPath path = ofPath();
+			ofColor fill_color;
+			fill_color.setHsb(fmod(i * 157.59, 255), 255, 255);
+			path.setFillColor(fill_color);
+			path.setStrokeColor(ofColor(0));
+			path.setStrokeWidth(0.85);
 			for(int j = 0; j < cellPoints.size(); j++){
 				ofPoint & thisPt = cellPoints[j];
 				if(j == 0){
-					ofColor fill_color;
-					fill_color.setHsb(fmod(i * 157.59, 255), 255, 255);
-					path.setFillColor(fill_color);
-					path.setStrokeColor(ofColor(0));
-					path.setStrokeWidth(0.85);
 					path.moveTo(thisPt);
 				}
 				else{
