@@ -12,7 +12,8 @@ The list of examples shows the recommended order and also shows which examples h
 In some cases, there is no openFrameworks equivalent (~~strikethrough~~).
 In some cases, there is a comparable alternative (~~strikethrough~~ NewName).
 In some cases, an example is added specifically for openFrameworks **(OF)**.
-Unfortunately the 3D examples are very challenging to port, because openFrameworks lacks addons of the quality level and capabilities of the amazing [Hemesh library](https://github.com/wblut/HE_Mesh2014).
+Unfortunately the 3D examples are very hard to port, because openFrameworks lacks addons with the capabilities of the amazing [Hemesh library](https://github.com/wblut/HE_Mesh2014).
+Feel free to send a pull request, if you have managed to recreate any of these! ;-)
 
 Steps to run the examples:
 
