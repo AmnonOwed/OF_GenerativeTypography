@@ -56,9 +56,9 @@ Recommended order:
 4. 3D
   - [X] Basic3DType
   - [X] ~~HemeshToPShape~~ Basic3DTypeVBO
-  - [ ] MeshManipulation
-  - [ ] Deconstructed
-  - [ ] SlicedUp
-  - [ ] FlowField3D
+  - [ ] ~~MeshManipulation~~
+  - [ ] ~~Deconstructed~~
+  - [ ] ~~SlicedUp~~
+  - [ ] ~~FlowField3D~~
   - [ ] SpherePacking
  
