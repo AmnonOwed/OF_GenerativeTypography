@@ -52,15 +52,15 @@ Recommended order:
   - [x] ~~UsingGeomerative~~ StringAsPoints
   - [x] LinesCircles
   - [x] Ocean
-  - [x] VoronoiType (requires [ofxVoronoi addon](https://github.com/AmnonOwed/ofxVoronoi))
-  - [x] VoronoiVariant (requires [ofxVoronoi addon](https://github.com/AmnonOwed/ofxVoronoi))
+  - [x] VoronoiType (requires [ofxVoronoi addon](https://github.com/madc/ofxVoronoi))
+  - [x] VoronoiVariant (requires [ofxVoronoi addon](https://github.com/madc/ofxVoronoi))
 
 4. 3D
-  - [X] Basic3DType
-  - [X] ~~HemeshToPShape~~ Basic3DTypeVBO
+  - [x] Basic3DType
+  - [x] ~~HemeshToPShape~~ Basic3DTypeVBO
   - [ ] ~~MeshManipulation~~
   - [ ] ~~Deconstructed~~
   - [ ] ~~SlicedUp~~
   - [ ] ~~FlowField3D~~
-  - [ ] ~~SpherePacking~~
+  - [x] SpherePacking (requires [ofxPointInMesh addon](https://github.com/AmnonOwed/ofxPointInMesh))
  
