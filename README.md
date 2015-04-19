@@ -63,4 +63,4 @@ Recommended order:
   - [ ] ~~SlicedUp~~
   - [ ] ~~FlowField3D~~
   - [x] SpherePacking (requires [ofxPointInMesh addon](https://github.com/AmnonOwed/ofxPointInMesh))
- 
+  - [x] Voronoi3D **(OF)** (requires [ofxPointInMesh](https://github.com/AmnonOwed/ofxPointInMesh) and [ofxVoro](https://github.com/patriciogonzalezvivo/ofxVoro) addons)
