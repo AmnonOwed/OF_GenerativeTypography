@@ -7,12 +7,6 @@ void ofApp::setup(){
 	ofEnableSmoothing();
 	ofEnableDepthTest();
 
-	directionalLight.setDiffuseColor(ofColor(125));
-	directionalLight.setPosition(boundsMax);
-	directionalLight.enable();
-
-	cam.setVFlip(true);
-
 	bResample = true;
 	resampleSpacing = 5.0;
 	letterThickness = 145.0;
@@ -31,6 +25,12 @@ void ofApp::setup(){
 	}
 
 	getBoundaries(mesh);
+
+	directionalLight.setDiffuseColor(ofColor(125));
+	directionalLight.setPosition(boundsMax);
+	directionalLight.enable();
+
+	cam.setVFlip(true);
 
 	bReset = true;
 }
@@ -72,7 +72,7 @@ void ofApp::draw(){
 
 	for(int i = 0; i < cellMeshes.size(); i++){
 		ofSetColor(colors[i]);
-		cellMeshes[i].drawFaces();
+		cellMeshes[i].draw();
 	}
 
 	ofSetColor(0, 75);
